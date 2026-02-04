@@ -1,5 +1,7 @@
 :root {
-	font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+	font-family:
+		"FiraCode Nerd Font Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+		Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 * {
@@ -16,12 +18,7 @@ body {
 	display: flex;
 }
 
-.app > .one {
-	background: pink;
-	width: 50%;
-}
-
-.app > .two {
-	width: 50%;
+.app > div {
 	background: #0f0;
+	width: 100%;
 }
