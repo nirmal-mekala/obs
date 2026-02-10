@@ -2,6 +2,12 @@
 	font-family:
 		"FiraCode Nerd Font Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
 		Consolas, "Liberation Mono", "Courier New", monospace;
+	--green-screen: #0f0;
+	--padding: 28px;
+	--border-width: 10px;
+	--effective-padding: calc(var(--padding) - var(--border-width));
+	--border-radius: 10px;
+	--screen-width: calc(1280px + (2 * var(--border-width)));
 }
 
 * {
@@ -16,9 +22,30 @@ body {
 
 .app {
 	display: flex;
+	flex-wrap: nowrap;
+	width: 1920px;
+	padding: var(--effective-padding);
+	gap: var(--effective-padding);
 }
 
-.app > div {
-	background: #0f0;
+.bordered {
+	background: var(--green-screen);
+	border: var(--border-width) solid var(--fg-color-3);
+	border-radius: var(--border-radius);
+}
+
+.screen {
+	width: var(--screen-width);
+}
+
+.webcam-timer {
+	width: calc(1920px - 1280px - 2 * var(--padding) - var(--effective-padding));
+}
+
+.webcam {
 	width: 100%;
+	height: calc(408px + 2 * var(--border-width));
+}
+
+.timer {
 }
