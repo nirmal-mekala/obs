@@ -89,10 +89,14 @@ body {
 	font-size: 150px;
 }
 
-.copy {
-	display: flex;
-	flex-wrap: nowrap;
-	justify-content: space-between;
-	font-size: 75px;
-	padding: 10px;
+#block {
+	font-size: 50px;
+	width: 100%;
+	text-align: center;
+}
+
+.techlectic {
+	font-size: 24px;
+	width: 100%;
+	text-align: center;
 }
