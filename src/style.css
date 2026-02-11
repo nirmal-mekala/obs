@@ -62,6 +62,7 @@ body {
 
 .screen {
 	width: var(--screen-width);
+	min-width: var(--screen-width);
 }
 
 .webcam-timer {
@@ -78,25 +79,34 @@ body {
 
 .timer {
 	flex-grow: 1;
-	background: var(--bg-color-2);
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+	flex-wrap: wrap;
+	backgroud: var(--bg-color-3);
+	padding-top: 50px;
 }
 
 #clock {
-	font-size: 150px;
+	font-size: 175px;
+	letter-spacing: -0.02em;
+	width: 100%;
+	text-align: center;
+	color: var(--fg-color-2);
 }
 
 #block {
-	font-size: 50px;
+	font-size: 40px;
 	width: 100%;
 	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 0.28em;
+	color: var(--fg-color-2);
 }
 
 .techlectic {
-	font-size: 24px;
+	font-size: 20px;
 	width: 100%;
 	text-align: center;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--fg-color-2);
 }
