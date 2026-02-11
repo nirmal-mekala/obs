@@ -26,9 +26,12 @@ body {
 }
 
 .bordered {
-	background: var(--green-screen);
-	border: var(--border-width) solid var(--fg-color-3);
+	border: var(--border-width) solid var(--fg-color-2);
 	border-radius: var(--border-radius);
+}
+
+.green-screen {
+	background: var(--green-screen);
 }
 
 .screen {
@@ -36,7 +39,7 @@ body {
 }
 
 .webcam-timer {
-	width: calc(1920px - 1280px - 2 * var(--padding) - var(--effective-padding));
+	flex-grow: 1;
 	display: flex;
 	flex-direction: column;
 	gap: var(--effective-padding);
