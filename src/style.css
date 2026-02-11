@@ -17,12 +17,38 @@ body {
 	display: grid;
 }
 
-.app {
+#app {
 	display: flex;
 	flex-wrap: nowrap;
 	width: 1920px;
 	padding: var(--effective-padding);
 	gap: var(--effective-padding);
+	position: relative;
+}
+
+.confetti {
+	position: absolute;
+	animation: confetti-fall 3s linear infinite;
+}
+
+@keyframes confetti-fall {
+	0% {
+		top: 0px;
+		transform: translateX(0);
+	}
+	25% {
+		transform: translateX(20px);
+	}
+	50% {
+		transform: translateX(0);
+	}
+	75% {
+		transform: translateX(20px);
+	}
+	100% {
+		transform: translateX(0);
+		top: 1200px;
+	}
 }
 
 .bordered {
@@ -56,12 +82,17 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: center;
 }
 
 #clock {
-	font-size: 100px;
+	font-size: 150px;
 }
 
-#block {
-	font-size: 40px;
+.copy {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	font-size: 75px;
+	padding: 10px;
 }
