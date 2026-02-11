@@ -85,6 +85,7 @@ const updateTimer = ({
 		setTimeout(updateTimer, 200, { targetTime, timerElement, mode });
 	} else {
 		emojiConfetti(mode);
+		// TODO playSound(mode)
 	}
 };
 
