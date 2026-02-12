@@ -79,12 +79,17 @@ body {
 
 .timer {
 	flex-grow: 1;
-	display: flex;
-	flex-wrap: wrap;
 	background: var(--fg-color-3);
 	border: var(--border-width) solid var(--fg-color-3);
 	border-radius: var(--border-radius);
+}
+
+#timer-inner {
+	visibility: hidden;
+	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
+	height: 100%;
 }
 
 #block {

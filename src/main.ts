@@ -15,8 +15,16 @@ const params = (): { mode: Mode } => {
 
 const main = () => {
 	const { mode } = params();
+	unhideTextOnFontLoad();
 	updateText(mode);
 	configureTimer(mode);
+};
+
+const unhideTextOnFontLoad = () => {
+	document.fonts.ready.then(() => {
+		const timerInner = document.getElementById("timer-inner");
+		if (timerInner) timerInner.style.visibility = "visible";
+	});
 };
 
 const updateText = (mode: Mode) => {
