@@ -20,19 +20,19 @@ const main = () => {
 };
 
 const updateText = (mode: Mode) => {
-	const blockElement = document.getElementById("block");
-	const clockElement = document.getElementById("clock");
-	const techlecticElement = document.getElementById("techlectic");
+	const block = document.getElementById("block");
+	const clock = document.getElementById("clock");
+	const techlectic = document.getElementById("techlectic");
+	const logo = document.getElementById("logo");
 
 	if (mode === "default") {
-		if (clockElement) clockElement.style.display = "none";
-		if (blockElement) blockElement.style.display = "none";
-		if (techlecticElement) {
-			techlecticElement.classList.add("big");
-		}
+		if (clock) clock.style.display = "none";
+		if (block) block.style.display = "none";
+		if (logo) logo.classList.add("visible");
+		if (techlectic) techlectic.classList.add("big");
+	} else {
+		if (block) block.textContent = mode;
 	}
-
-	if (blockElement) blockElement.textContent = mode === "default" ? "" : mode;
 };
 
 const configureTimer = (mode: Mode) => {

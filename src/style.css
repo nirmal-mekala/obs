@@ -59,7 +59,7 @@ body {
 .screen {
 	width: var(--screen-width);
 	min-width: var(--screen-width);
-	border: var(--border-width) solid var(--bg-color-3);
+	border: var(--border-width) solid var(--fg-color-2);
 	border-radius: var(--border-radius);
 }
 
@@ -81,39 +81,59 @@ body {
 	flex-grow: 1;
 	display: flex;
 	flex-wrap: wrap;
-	backgroud: var(--bg-color-3);
-	border: var(--border-width) solid var(--fg-color-2);
+	background: var(--fg-color-3);
+	border: var(--border-width) solid var(--fg-color-3);
 	border-radius: var(--border-radius);
-	align-items: center;
+	justify-content: center;
+}
+
+#block {
+	font-size: 55px;
+	font-weight: bold;
+	width: 100%;
+	text-align: center;
+	color: var(--bg-color-1);
+	padding-top: 20px;
 }
 
 #clock {
 	font-size: 175px;
 	width: 100%;
+	font-weight: bold;
 	text-align: center;
-	color: var(--fg-color-2);
-}
-
-#block {
-	padding-top: 50px;
-	font-size: 40px;
-	width: 100%;
-	text-align: center;
-	text-transform: uppercase;
-	letter-spacing: 0.28em;
-	color: var(--fg-color-2);
+	color: var(--bg-color-1);
+	margin-bottom: 0px;
+	transform: translateY(-70px);
 }
 
 #techlectic {
-	font-size: 20px;
+	font-size: 30px;
 	width: 100%;
 	text-align: center;
-	letter-spacing: 0.12em;
-	text-transform: uppercase;
-	color: var(--fg-color-2);
+	font-weight: bold;
+	color: var(--bg-color-1);
+	align-self: flex-end;
+	padding-bottom: 20px;
 }
 
 #techlectic.big {
-	font-size: 75px;
-	text-transform: none;
+	font-size: 40px;
+}
+
+#logo {
+	margin-top: 55px;
+	display: none;
+	color: var(--fg-color-3);
+	height: 200px;
+}
+
+#logo > code {
+	font-weight: bold;
+	font-size: 200px;
+	padding: 0 60px;
+	border-radius: 100%;
+}
+
+#logo.visible {
+	display: block;
 }
