@@ -51,18 +51,16 @@ body {
 	}
 }
 
-.bordered {
-	border: var(--border-width) solid var(--fg-color-2);
-	border-radius: var(--border-radius);
-}
-
 .green-screen {
-	background: var(--green-screen);
+	position: relative;
+	background-color: var(--green-screen);
 }
 
 .screen {
 	width: var(--screen-width);
 	min-width: var(--screen-width);
+	border: var(--border-width) solid var(--bg-color-3);
+	border-radius: var(--border-radius);
 }
 
 .webcam-timer {
@@ -75,6 +73,8 @@ body {
 .webcam {
 	width: 100%;
 	height: calc(408px + 2 * var(--border-width));
+	border: var(--border-width) solid var(--fg-color-2);
+	border-radius: var(--border-radius);
 }
 
 .timer {
@@ -82,18 +82,20 @@ body {
 	display: flex;
 	flex-wrap: wrap;
 	backgroud: var(--bg-color-3);
-	padding-top: 50px;
+	border: var(--border-width) solid var(--fg-color-2);
+	border-radius: var(--border-radius);
+	align-items: center;
 }
 
 #clock {
 	font-size: 175px;
-	letter-spacing: -0.02em;
 	width: 100%;
 	text-align: center;
 	color: var(--fg-color-2);
 }
 
 #block {
+	padding-top: 50px;
 	font-size: 40px;
 	width: 100%;
 	text-align: center;
@@ -102,11 +104,16 @@ body {
 	color: var(--fg-color-2);
 }
 
-.techlectic {
+#techlectic {
 	font-size: 20px;
 	width: 100%;
 	text-align: center;
 	letter-spacing: 0.12em;
 	text-transform: uppercase;
 	color: var(--fg-color-2);
+}
+
+#techlectic.big {
+	font-size: 75px;
+	text-transform: none;
 }

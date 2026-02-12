@@ -15,12 +15,23 @@ const params = (): { mode: Mode } => {
 
 const main = () => {
 	const { mode } = params();
-	updateBlockText(mode);
+	updateText(mode);
 	configureTimer(mode);
 };
 
-const updateBlockText = (mode: Mode) => {
+const updateText = (mode: Mode) => {
 	const blockElement = document.getElementById("block");
+	const clockElement = document.getElementById("clock");
+	const techlecticElement = document.getElementById("techlectic");
+
+	if (mode === "default") {
+		if (clockElement) clockElement.style.display = "none";
+		if (blockElement) blockElement.style.display = "none";
+		if (techlecticElement) {
+			techlecticElement.classList.add("big");
+		}
+	}
+
 	if (blockElement) blockElement.textContent = mode === "default" ? "" : mode;
 };
 
