@@ -1,3 +1,5 @@
+import alarmSound from "./assets/alarm.mp3";
+
 const modes = ["default", "work", "break"] as const;
 type Mode = (typeof modes)[number];
 
@@ -15,9 +17,19 @@ const params = (): { mode: Mode } => {
 
 const main = () => {
 	const { mode } = params();
+	const targetTime = getTargetTime(mode);
 	unhideTextOnFontLoad();
 	updateText(mode);
-	configureTimer(mode);
+	configureEscapeHatch(targetTime);
+	configureTimer(mode, targetTime);
+};
+
+const configureEscapeHatch = (targetTime: Date) => {
+	window.addEventListener("keydown", (e) => {
+		if (e.ctrlKey && e.key.toLowerCase() === "c") {
+			targetTime.setTime(0);
+		}
+	});
 };
 
 const unhideTextOnFontLoad = () => {
@@ -25,6 +37,16 @@ const unhideTextOnFontLoad = () => {
 		const timerInner = document.getElementById("timer-inner");
 		if (timerInner) timerInner.style.visibility = "visible";
 	});
+};
+
+const getTargetTime = (mode: Mode) => {
+	const times: Record<Mode, number> = {
+		default: 0,
+		work: 25 * 60 * 1000,
+		break: 5 * 60 * 1000,
+	};
+	if (times[mode] === 0) return new Date(0);
+	return new Date(Date.now() + times[mode]);
 };
 
 const updateText = (mode: Mode) => {
@@ -43,14 +65,7 @@ const updateText = (mode: Mode) => {
 	}
 };
 
-const configureTimer = (mode: Mode) => {
-	const times: Record<Mode, number> = {
-		default: 0,
-		work: 25 * 60 * 1000,
-		break: 5 * 60 * 1000,
-	};
-	if (times[mode] === 0) return;
-	const targetTime = new Date(Date.now() + times[mode]);
+const configureTimer = (mode: Mode, targetTime: Date) => {
 	const timerElement = document.getElementById("clock");
 	updateTimer({ targetTime, timerElement, mode });
 };
@@ -62,12 +77,7 @@ const format = (num: number): string => {
 
 const emojiConfetti = (mode: Mode) => {
 	if (mode === "default") return;
-	const emojis: Record<Mode, string> = {
-		default: "",
-		work: "\u{1F62E}\u{200D}\u{1F4A8}", // face exhaling
-		break: "\u{1F468}\u{1F3FE}\u{200D}\u{1F4BB}", // man technologist medium dark skin tone
-	};
-	const emoji = emojis[mode];
+	const emoji = "\u23F2\uFE0F"; // timer emoji
 	const confettiContainer = document.getElementById("app");
 	if (confettiContainer) {
 		for (let i = 0; i < 10; i++) {
@@ -82,6 +92,12 @@ const emojiConfetti = (mode: Mode) => {
 			}, 3400);
 		}
 	}
+};
+
+const playSound = () => {
+	const alarm = new Audio(alarmSound);
+	console.log("hi");
+	alarm.play();
 };
 
 const updateTimer = ({
@@ -104,7 +120,7 @@ const updateTimer = ({
 		setTimeout(updateTimer, 200, { targetTime, timerElement, mode });
 	} else {
 		emojiConfetti(mode);
-		// TODO playSound(mode)
+		playSound();
 	}
 };
 
