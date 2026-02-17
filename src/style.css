@@ -1,9 +1,4 @@
 :root {
-	--green-screen: #0f0;
-	--win-95-teal: #008080;
-	--beige: #ffffe4;
-	--win-95-gray: #c0c0c0;
-	--white: #fff;
 	--padding: 28px;
 	--border-width: 10px;
 	--effective-padding: calc(var(--padding) - var(--border-width));
@@ -19,7 +14,7 @@ body {
 	margin: 0;
 	min-height: 100vh;
 	display: grid;
-	background: var(--win-95-teal);
+	background: teal;
 }
 
 #app {
@@ -58,13 +53,13 @@ body {
 
 .green-screen {
 	position: relative;
-	background-color: var(--green-screen);
+	background-color: lime;
 }
 
 .screen {
 	width: var(--screen-width);
 	min-width: var(--screen-width);
-	border: var(--border-width) solid var(--win-95-gray);
+	border: var(--border-width) solid beige;
 	border-radius: var(--border-radius);
 }
 
@@ -78,14 +73,14 @@ body {
 .webcam {
 	width: 100%;
 	height: calc(408px + 2 * var(--border-width));
-	border: var(--border-width) solid var(--win-95-gray);
+	border: var(--border-width) solid beige;
 	border-radius: var(--border-radius);
 }
 
 .timer {
 	flex-grow: 1;
-	background: var(--win-95-gray);
-	border: var(--border-width) solid var(--win-95-gray);
+	background: beige;
+	border: var(--border-width) solid beige;
 	border-radius: var(--border-radius);
 }
 
@@ -102,7 +97,7 @@ body {
 	font-weight: bold;
 	width: 100%;
 	text-align: center;
-	color: var(--win-95-teal);
+	color: teal;
 	padding-top: 20px;
 }
 
@@ -111,7 +106,7 @@ body {
 	width: 100%;
 	font-weight: bold;
 	text-align: center;
-	color: var(--win-95-teal);
+	color: teal;
 	margin-bottom: 0px;
 	transform: translateY(-70px);
 }
@@ -121,7 +116,7 @@ body {
 	width: 100%;
 	text-align: center;
 	font-weight: bold;
-	color: var(--win-95-teal);
+	color: teal;
 	align-self: flex-end;
 	padding-bottom: 20px;
 }
@@ -133,14 +128,14 @@ body {
 #logo {
 	margin-top: 55px;
 	display: none;
-	color: var(--white);
+	color: white;
 	height: 200px;
 }
 
 #logo > code {
 	font-weight: bold;
-	background: var(--win-95-teal);
-	border: var(--border-width) solid var(--win-95-teal);
+	background: teal;
+	border: var(--border-width) solid teal;
 	font-size: 200px;
 	padding: 0 60px;
 	border-radius: 100%;
