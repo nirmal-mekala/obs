@@ -96,7 +96,6 @@ const emojiConfetti = (mode: Mode) => {
 
 const playSound = () => {
 	const alarm = new Audio(alarmSound);
-	console.log("hi");
 	alarm.play();
 };
 
