@@ -3,7 +3,7 @@
 	--border-width: 10px;
 	--effective-padding: calc(var(--padding) - var(--border-width));
 	--border-radius: 10px;
-	--screen-width: calc(1280px + (2 * var(--border-width)));
+	--screen-width: calc((1024px * 4 / 3) + (2 * var(--border-width)));
 }
 
 * {
@@ -21,6 +21,7 @@ body {
 	display: flex;
 	flex-wrap: nowrap;
 	width: 1920px;
+	height: 1080px;
 	padding: var(--effective-padding);
 	gap: var(--effective-padding);
 	position: relative;
@@ -57,8 +58,9 @@ body {
 }
 
 .screen {
-	width: var(--screen-width);
-	min-width: var(--screen-width);
+	height: 100%;
+	max-width: var(--screen-width);
+	aspect-ratio: 4 / 3;
 	border: var(--border-width) solid beige;
 	border-radius: var(--border-radius);
 }
@@ -72,7 +74,8 @@ body {
 
 .webcam {
 	width: 100%;
-	height: calc(408px + 2 * var(--border-width));
+	height: auto;
+	aspect-ratio: 4 / 3;
 	border: var(--border-width) solid beige;
 	border-radius: var(--border-radius);
 }
